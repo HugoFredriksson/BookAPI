@@ -54,7 +54,7 @@ namespace bookList.Controllers
                 query.Parameters.AddWithValue("@author", book.Author);
                 int rows = query.ExecuteNonQuery();
 
-                if (rows > 0) 
+                if (rows < 0) 
                 {
                     return StatusCode(500, "Could not post book! tråkigt...");
                 }
